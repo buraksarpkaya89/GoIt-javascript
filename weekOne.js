@@ -187,8 +187,8 @@ const d1 = 6
 function Countries() {
     const bigCountry = "ABD"
     let smallCountry = "Litvanya"
-    console.log(bigCountry);
-    console.log(araba);
+    // console.log(bigCountry);
+    // console.log(araba);
 }
 
 Countries();
@@ -214,12 +214,12 @@ Country();
 
 // colors()
 
-function colors1() {
-    return console.log("renkler burada gösteriliyor")
+// function colors1() {
+//     return console.log("renkler burada gösteriliyor")
     
     
-}
-colors1()
+// }
+// colors1()
 
 //PARAMETRE EKLEYEBİLME
 
@@ -227,7 +227,7 @@ const Meyve = "Armut"
 
 
 function Otel(name,roomNo,order){
-    console.log(`Merhaba ${name} , ${roomNo} numaralı odanıza talebiniz üzerine ${order} ürünü gönderilecektir`);
+    // console.log(`Merhaba ${name} , ${roomNo} numaralı odanıza talebiniz üzerine ${order} ürünü gönderilecektir`);
 }
 
 Otel("Ahmet",22,    Meyve)
@@ -238,7 +238,7 @@ function Mathematics(a,b){
     return (total)
 }
 
-console.log(Mathematics(10,10)); 
+// console.log(Mathematics(10,10)); 
 
 
 
