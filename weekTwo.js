@@ -153,7 +153,7 @@ let totalPoint = (arasinav + notDeğeri) / 2
 
 
 function checkForName(fullName, firstName) {
-    return fullName.toLowerCase().includes(firstName.toUpperCase());
+    return fullName.toLowerCase().includes(firstName.toLowerCase());
 }
 
 // console.log(checkForName("Burak Sarpkaya", "burak"));
@@ -170,7 +170,7 @@ function checkForName(fullName, firstName) {
 //     console.log("ifade içerisinde yoktur");
 // }
 
-let count = 10;
+let count = 1;
 
 // while (count < 5) {
 //   count += 1;
