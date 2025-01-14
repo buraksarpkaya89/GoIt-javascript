@@ -21,7 +21,7 @@ function sayiTahminOyunu() {
 
         if (tahmin === null) {
             alert("oyundan çıkıldı")
-            break;
+            return;
         }
 
         tahmin = Number(tahmin)

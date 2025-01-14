@@ -101,3 +101,93 @@ for (let i = 36 ; i <= 45 ; i++ ){
 
 console.log(ayakkabiNumaralari);
 
+
+
+// Lesson Two
+
+
+const planets = ["Earth", "Mars", "Venus"];
+
+// console.log(planets[1]); //Mars
+
+// for (let i = 0; i < planets.length; i += 1) {
+//   console.log(planets[i]);
+// }
+
+// Earth, Mars, Venus
+
+let index1 = 0
+
+while (index1 < planets.length) {
+    console.log(planets[index1]);
+    index1++ // index +=1,  index = index+1
+}
+
+//Argumants
+
+function multiply() {
+    let total = 1; //1 ,2,6,24
+  
+    for (const arg of arguments) {
+      total *= arg;
+    }
+  
+    return total;
+  }
+  
+  console.log(multiply(1, 2, 3,4));
+
+
+  function greet(username = "Burak") {
+    console.log(`Hello, ${username}!`);
+  }
+  
+  greet("Ahmet");
+  greet(); 
+
+
+
+
+
+
+  function araba() {
+    console.log("araba çağırıldı");
+    ev(); //tamamladım
+    console.log("araba fonksiyonu bitti");
+  }
+  
+  function ev() {
+    console.log("ev çağırıldı");
+  }
+  
+  console.log("çağrılan birşey yok");
+  araba(); //tamamaladım
+  console.log("herşey bitti");
+
+
+//   "çağrılan birşey yok"
+//   "araba çağırıldı"
+//   "ev çağırıldı"
+//   "araba fonksiyonu bitti"
+//   "herşey bitti"
+
+  
+  function bar() {
+    console.log("bar");
+  }
+  
+  function baz() {
+    console.log("baz");
+  }
+  
+  function foo() {
+    console.log("foo");
+    bar(); //tamamladım
+    baz(); //tamamladım
+  }
+  
+  foo();
+  
+//   "foo"
+//   "bar"
+//   "baz"
