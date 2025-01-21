@@ -72,7 +72,7 @@ let arrayTest = []
 
 let genresAll = Object.values(book)[2];
 
-for(const genres of genresAll){
+for (const genres of genresAll) {
     arrayTest.push(genres)
     arrayTest.push(book.rating)
 }
@@ -165,3 +165,121 @@ for (const color of colors) {
 
 console.log(hexColors);
 console.log(rgbColors);
+
+
+
+//Lesson 2
+
+const bookShelf = {
+    books: [
+        { title: "The Last Kingdom", rating: 8 },
+        { title: "The Mist", rating: 6 }
+    ],
+    getBooks() {
+        return this.books;
+    },
+    addBook(...newBook) {
+        this.books.push(newBook);
+    }
+};
+
+bookShelf.addBook({ title: "Dream Guardian", rating: 9 }, { title: "Dream Guardian1", rating: 91 });
+
+console.log(bookShelf.getBooks());
+
+let depo = []
+
+for (const book of bookShelf.books) {
+    // console.log(book.rating);
+    depo.push(book.rating)
+}
+
+console.log(depo);
+
+
+
+const bookShelf1 = {
+    books: [
+        { title: "The Last Kingdom", rating: 8 },
+        { title: "The Mist", rating: 6 },
+    ],
+
+
+    getAvarageRating() {
+        let totalRating = 0; //14
+
+        for (const book of this.books) {
+            totalRating = totalRating + book.rating;
+            // 0        =  0 + 8 =8
+            // 8        =  8 + 6 = 14
+        }
+
+        return totalRating / this.books.length;
+        //        14  / 2 = 7
+    },
+};
+
+bookShelf1.getAvarageRating();
+
+
+
+
+const bookShelf2 = {
+    books: [
+        { title: "The Last Kingdom", rating: 8 },
+        { title: "The Mist", rating: 6 },
+    ],
+    changeRating(bookName, newRating) {
+        for (const book of this.books) {
+            if (book.title === bookName) {
+                book.rating = newRating;
+            }
+        }
+    }
+};
+
+// changeRating("The Mist", 9); // { title: "The Mist", rating: 9 }
+// changeRating("The Last Kingdom", 4); // { title: "The Last Kingdom", rating: 4 }
+
+
+function multiply1(...args) {
+    console.log(args); //dizi 
+}
+
+multiply1(1, 2, 3, 4);  // 1 , [2,3,4]
+
+
+
+const temps = [14, -4, 25, 8, 11];
+
+console.log(...temps); // 14, -4, 25, 8, 11
+
+
+const first = {
+    propA: 5,
+    propB: 10
+};
+const second = {
+    propC: 15
+};
+const third = { propA: 5,
+    propB: 10, propC: 15 };
+console.log(third);
+
+
+
+const first1 = { propA: 5, propB: 10, propC: 50 };
+const second2 = { propC: 15 };
+
+const third3 = { propB: 20, ...first1, ...second2 };
+
+console.log(third3); 
+// propB:10 ,propA:5,propC:15
+
+const fourth = { ...first1, ...second2, propB: 20 };
+console.log(fourth)
+// propA: 5, propB: 20, propC: 15
+
+const fifth = { ...first, propB: 20, ...second };
+console.log(fifth);
+// propA: 5, propB: 20, propC: 15
