@@ -23,13 +23,13 @@ console.log(typeof dosyalar[2]);
 
 
 function getExtremeElements(array) {
-    const firstElement = array[0]; //1
-    const lastElement = array[array.length - 1]; // 5
+  const firstElement = array[0]; //1
+  const lastElement = array[array.length - 1]; // 5
 
-    return [firstElement, lastElement]; // [1,5]
+  return [firstElement, lastElement]; // [1,5]
 }
 
-console.log(getExtremeElements([1,2,3,4,5])[0]);
+console.log(getExtremeElements([1, 2, 3, 4, 5])[0]);
 
 
 let a = 5;
@@ -44,9 +44,9 @@ console.log(a); // 10
 console.log(b);
 
 let arabalar = [
-    ["i10","i20","yaris"],
-    ["corolla", "bmv", "accent"],
-    ["togg", "chery", "range rover"]
+  ["i10", "i20", "yaris"],
+  ["corolla", "bmv", "accent"],
+  ["togg", "chery", "range rover"]
 ]
 console.log(arabalar[2[1]]); //undefined
 console.log(arabalar[2][1]);
@@ -54,7 +54,7 @@ console.log(arabalar[2][1]);
 
 const words = ["JavaScript", "is", "amazing"]
 
-console.log(words.join("")); 
+console.log(words.join(""));
 console.log(words.join(" "));
 console.log(words.join("-"));
 
@@ -80,7 +80,7 @@ let ayakkabilar = ["nike", "adidas"]
 let firstProcess = sebzeler.concat(ayakkabilar)
 console.log(firstProcess);
 buzdolabi.push(firstProcess)
-let test =[1,3]
+let test = [1, 3]
 buzdolabi.push(meyveler)
 console.log(buzdolabi);
 
@@ -95,8 +95,8 @@ console.log(buzdolabi);
 
 let ayakkabiNumaralari = []
 
-for (let i = 36 ; i <= 45 ; i++ ){
-    ayakkabiNumaralari.push(i)
+for (let i = 36; i <= 45; i++) {
+  ayakkabiNumaralari.push(i)
 }
 
 console.log(ayakkabiNumaralari);
@@ -119,50 +119,50 @@ const planets = ["Earth", "Mars", "Venus"];
 let index1 = 0
 
 while (index1 < planets.length) {
-    console.log(planets[index1]);
-    index1++ // index +=1,  index = index+1
+  console.log(planets[index1]);
+  index1++ // index +=1,  index = index+1
 }
 
 //Argumants
 
 function multiply() {
-    let total = 1; //1 ,2,6,24
-  
-    for (const arg of arguments) {
-      total *= arg;
-    }
-  
-    return total;
+  let total = 1; //1 ,2,6,24
+
+  for (const arg of arguments) {
+    total *= arg;
   }
-  
-  console.log(multiply(1, 2, 3,4));
+
+  return total;
+}
+
+console.log(multiply(1, 2, 3, 4));
 
 
-  function greet(username = "Burak") {
-    console.log(`Hello, ${username}!`);
-  }
-  
-  greet("Ahmet");
-  greet(); 
+function greet(username = "Burak") {
+  console.log(`Hello, ${username}!`);
+}
+
+greet("Ahmet");
+greet();
 
 
 
 
 
 
-  function araba() {
-    console.log("araba çağırıldı");
-    ev(); //tamamladım
-    console.log("araba fonksiyonu bitti");
-  }
-  
-  function ev() {
-    console.log("ev çağırıldı");
-  }
-  
-  console.log("çağrılan birşey yok");
-  araba(); //tamamaladım
-  console.log("herşey bitti");
+function araba() {
+  console.log("araba çağırıldı");
+  ev(); //tamamladım
+  console.log("araba fonksiyonu bitti");
+}
+
+function ev() {
+  console.log("ev çağırıldı");
+}
+
+console.log("çağrılan birşey yok");
+araba(); //tamamladım
+console.log("herşey bitti");
 
 
 //   "çağrılan birşey yok"
@@ -171,23 +171,23 @@ function multiply() {
 //   "araba fonksiyonu bitti"
 //   "herşey bitti"
 
-  
-  function bar() {
-    console.log("bar");
-  }
-  
-  function baz() {
-    console.log("baz");
-  }
-  
-  function foo() {
-    console.log("foo");
-    bar(); //tamamladım
-    baz(); //tamamladım
-  }
-  
-  foo();
-  
+
+function bar() {
+  console.log("bar");
+}
+
+function baz() {
+  console.log("baz");
+}
+
+function foo() {
+  console.log("foo");
+  bar(); //tamamladım
+  baz(); //tamamladım
+}
+
+foo();
+
 //   "foo"
 //   "bar"
 //   "baz"
