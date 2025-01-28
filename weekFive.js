@@ -227,4 +227,168 @@ console.log(words);
 
 
 
+//LESSON 2
+
+
+const sayilar = [1,2,3,4,5,6,7]
+
+const ciftsayilar = sayilar.filter(sayi => sayi % 2 === 0) // [2,4,6]
+const ciftsayilar1 = sayilar.find(item => item % 2 === 0) // 2
+
+console.log(ciftsayilar);
+console.log(ciftsayilar1);
+
+const kullanicilar = [
+    {id:1 , ad: "Mehmet" , yas:25},
+    {id:2 , ad: "Ahmet" , yas:20},
+    {id:3 , ad: "Ayşe" , yas:35},
+    {id:4 , ad: "Ali" , yas:15},
+    {id:5 , ad: "Fatma" , yas:10},
+
+]
+
+const yetiskinKullanici = kullanicilar.filter(kullanici => kullanici.yas >= 18)
+console.log(yetiskinKullanici);
+if(yetiskinKullanici.length > 0) {
+    console.log("web sitemize kayıt olabilir",yetiskinKullanici);
+}else{
+    console.log("Hiçkimse kayıt olamaz");
+}
+
+
+const adUzunlugu = kullanicilar.find(item => item.ad.length === 5 )
+console.log(adUzunlugu);
+
+
+
+const corona = [
+    {ad:"ali", degeri:true},
+    {ad:"ali1", degeri:true},
+    {ad:"ali2", degeri:false},
+    {ad:"ali3", degeri:true},
+    {ad:"ali4", degeri:false},
+
+]
+
+// corona olan öğrencileri
+
+const negative = corona.filter(student => !student.degeri)
+console.log(negative);
+
+const firstCorona = corona.find(item => item.degeri)
+console.log(firstCorona);
+
+
+// every methodu
+
+const ages = [15,20,5,30]
+const adult = ages.every(age => age >= 15)
+console.log(adult); // false
+
+const product = [
+    {name :"Laptop" , stock :true},
+    {name :"Tablet" , stock :false},
+    {name :"Telefon" , stock :true},
+    {name :"Tablet1" , stock :false},
+
+
+]
+
+const allStockCheck = product.every( item => item.stock)
+console.log(allStockCheck); // 
+
+const stoktaYok = product.filter(item => !item.stock)
+console.log(stoktaYok);
+
+// if(allStockCheck === false) {
+//     console.log(`${Object.keys(stoktaYok[0])[0]} ${Object.values(stoktaYok[0])[0]} bu ürün stokta yok`);
+// }
+const olmayanlar = []
+stoktaYok.map(item => olmayanlar.push(item.name))
+console.log(olmayanlar);
+
+if(allStockCheck === false) {
+    console.log(`${olmayanlar} bu ürünler stokta yok `);
+}
+// some
+
+const market = [
+    {id:1, meyveAdi:"elma", onSale:false },
+    {id:2, meyveAdi:"elma1", onSale:false },
+    {id:3, meyveAdi:"elma2", onSale:true },
+    {id:4, meyveAdi:"elma3", onSale:false },
+
+]
+const saleCheck = market.some(item => item.onSale)
+console.log(saleCheck);
+
+
+const doorNumbers = [2,4,6,7,10,15]
+
+const roomCheck = doorNumbers.some(item => item % 2 !== 0)
+console.log(roomCheck);
+
+const ciftOda = []
+const tekOda = []
+
+// const roomNumber =  doorNumbers.filter(item => item % 2 === 0 )
+// const roomNumber1 =  doorNumbers.filter(item => item % 2 !== 0 )
+
+// ciftOda.push(roomNumber)
+
+if(doorNumbers.filter(item => item % 2 === 0 )) {
+    ciftOda.push(doorNumbers.filter(item => item % 2 === 0))
+}
+if (doorNumbers.filter(item => item % 2 !== 0)){
+    tekOda.push(doorNumbers.filter(item => item % 2 !== 0))
+}
+
+console.log(ciftOda);
+console.log(tekOda);
+
+
+//reduce
+
+const rakamlar = [1,4,6,7,8,9]
+const sum = rakamlar.reduce((toplam , rakam)=> toplam + rakam , 0)
+console.log(sum);
+// toplam = 1
+
+// 0 + 1 = 1
+// 1 + 4 = 5
+// 5 + 6 = 11
+// 11 + 7 = 18
+// 18 + 8 = 26
+// 26 + 9 = 35
+
+const card = [
+    {name :"Laptop" , price :2000},
+    {name :"Tablet" , price :3000},
+    {name :"Telefon" , price :10000},
+    {name :"ablet1" , price :7000},
+]
+
+const totalPrice = card.reduce((toplam ,productPrice) => toplam + productPrice.price,0 ) 
+console.log(totalPrice);
+//toSorted -sort
+const elemanlar =  [4,2,7,5]
+const sorted = elemanlar.toSorted()
+console.log(sorted);
+console.log(elemanlar);
+const elemanlar1 =  [4,2,7,5]
+const sorted1 =  elemanlar1.sort()
+console.log(elemanlar1);
+console.log(sorted1);
+
+
+const descending = elemanlar.toSorted((a,b) => b - a )
+console.log(descending);
+
+//isme göre sıralama 
+
+const byName = card.toSorted((a,b) => a.name.localeCompare(b.name))
+const byPrice = card.toSorted((a,b) => b.price - a.price)
+console.log(byPrice);
+
+console.log(byName);
 
