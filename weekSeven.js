@@ -38,47 +38,54 @@
 // removeEl.remove()
 
 
+// const button = document.querySelector(".my-button");
 
-// SIFIRDAN ELEMENT OLUŞTURMA
-
-//CONTAINER OLUŞTUR
-const formContainer = document.createElement("div")
-formContainer.style.width = "400px"
-formContainer.style.padding ="15px"
-formContainer.style.backgroundColor ="yellow"
-formContainer.style.height = "100px"
-formContainer.style.display ="flex"
-formContainer.style.flexDirection ="column"
-
-//Label oluştur
-
-const label = document.createElement('label')
-label.textContent = "Adınızı Giriniz"
-label.style.display ="flex"
-label.style.fontSize = "13px"
-
-// input oluştur
-
-const inputElement = document.createElement("input")
-inputElement.type = "text"
-inputElement.width = "90%"
-inputElement.style.border ="1px solid black"
-
-//buton oluştur
-
-const button = document.createElement("button")
-button.textContent ="Gönder"
-button.style.backgroundColor = "blue"
-button.style.borderRadius ="10px"
-button.style.cursor ="pointer"
-button.style.color ="white"
+// button.addEventListener("keydown", (elma) => {
+//     console.log(elma);
+//     // event.currentTarget.style.backgroundColor = "red"
+// //   alert("Butona tıklandı")
+// });
 
 
+const registerForm = document.querySelector(".form");
 
-formContainer.appendChild(label)
-formContainer.appendChild(inputElement)
-formContainer.appendChild(button)
-document.body.appendChild(formContainer)
+registerForm.addEventListener("submit", handleSubmit);
+
+function handleSubmit(event) {
+  event.preventDefault();
+  console.log(event.target.elements.login.value);
+  const form = event.target;
+  const login = form.elements.login.value;
+  const password = form.elements.password.value;
+  
+  if (login === "" || password === "") {
+    return console.log("Please fill in all the fields!");
+  }
+
+  console.log(`Login: ${login}, Password: ${password}`);
+//   form.reset();
+}
+
+
+document.getElementById("country").addEventListener("change", function(event) {
+    console.log(event);
+    console.log("seçilen ülke :" , event.target.value);
+})
+
+
+document.querySelector(".username").addEventListener("input",(event)=> {
+    console.log(event.target.value);
+})
+
+// document.querySelector(".username").addEventListener("focus",(event)=> {
+//     event.target.style.backgroundColor = "red"
+// })
+// document.querySelector(".username").addEventListener("blur",(event)=> {
+//     event.target.style.backgroundColor = ""
+// })
+
+
+
 
 
 
